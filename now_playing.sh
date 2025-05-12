@@ -1,8 +1,7 @@
 #!/bin/bash
 
-echo '' > song.data
-
-symbol="|>"
+song_data=
+symbol=
 
 song_status (){
 img=`playerctl metadata mpris:artUrl | cut -b 6-`
@@ -24,12 +23,11 @@ now_playing (){
 title=`playerctl metadata title`
 artist=`playerctl metadata artist`
 img=`playerctl metadata mpris:artUrl | cut -b 7-`
-song=`tail -n -1 song.data`
-
+song=$song_data
 
 	if [[ "$song" != "$artist - $title" ]]; then
 		clear
-		echo "$artist - $title" >> song.data
+		song_data="$artist - $title"
 		song_status
 	fi
 }
@@ -42,16 +40,16 @@ now_playing
 read -t 2 input
 	if [[ "$input" == "q" ]] ; then
 		playerctl play-pause
-		input='\0'
 		sleep 0.5
 		clear
+
 		song_status
 	fi
 	if [[ "$input" == "e" ]] ; then
 		playerctl next
 		echo "Pulou!"
-		input='\0'
 		sleep 0.5
+
 		now_playing
 	fi
 sleep 2
