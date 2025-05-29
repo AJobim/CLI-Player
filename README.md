@@ -18,6 +18,9 @@ sudo apt install -y playerctl
 sudo apt install -y kitty
 sudo apt install -y timg
 sudo apt install -y git
+
+#Clone to your path of choice
+git clone https://github.com/AJobim/CLI-Player.git
 ```
 
 ## Usage instructions
