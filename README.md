@@ -25,6 +25,8 @@ git clone https://github.com/AJobim/CLI-Player.git
 
 ## Usage instructions
 
+**WARNING, ONLY WORKS WITH HYPRLAND FOR NOW!!!**
+
 After downloading, run the following to make the archive executable. Remember to change the path to where the script was saved.
 <pre>sudo chmod +x path-to-script/now_playing.sh</pre>
 
